@@ -1,6 +1,6 @@
 package bench
 
-func concrete(n Node) {
+func concrete(n *Node) {
 	n.ID()
 }
 
@@ -18,9 +18,9 @@ func typeAssertion(n NodeInterface) {
 
 func typeSwitching(n NodeInterface) {
 	switch n := n.(type) {
-	case Node:
+	case *Node:
 		n.ID()
-	case NodeStruct:
+	case *NodeStruct:
 		n.ID()
 	}
 }

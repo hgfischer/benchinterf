@@ -6,8 +6,8 @@ type NodeInterface interface {
 
 type Node int64
 
-func (n Node) ID() int64 {
-	return int64(n)
+func (n *Node) ID() int64 {
+	return int64(*n)
 }
 
 type NodeStruct struct {
@@ -15,6 +15,6 @@ type NodeStruct struct {
 	Data int64
 }
 
-func (n NodeStruct) ID() int64 {
+func (n *NodeStruct) ID() int64 {
 	return n.Id
 }
