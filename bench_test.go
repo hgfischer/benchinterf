@@ -23,6 +23,20 @@ func BenchmarkInterfacedNodeStruct(b *testing.B) {
 	}
 }
 
+func BenchmarkTypeAssertionNode(b *testing.B) {
+	n := Node(123)
+	for i := 0; i < b.N; i++ {
+		typeAssertion(n)
+	}
+}
+
+func BenchmarkTypeAssertionNodeStruct(b *testing.B) {
+	n := &NodeStruct{17, 123}
+	for i := 0; i < b.N; i++ {
+		typeAssertion(n)
+	}
+}
+
 func BenchmarkTypeSwitchingNode(b *testing.B) {
 	n := Node(123)
 	for i := 0; i < b.N; i++ {
